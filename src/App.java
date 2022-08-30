@@ -1,19 +1,17 @@
 public class App {
-    public static void main(String[] args) throws Exception {
-        // F(n)
+    public static void main(String[] args) throws Exception {        
         
-        
-        // EXPONENCIAL
-        double r = (Math.log(6003173) - Math.log(1943)) / (Math.log(35) - Math.log(5));
+        /*/ EXPONENCIAL
+        double r = (Math.log(1499850814) - Math.log(28148)) / (Math.log(95) - Math.log(10));
         double b = Math.exp(r);
         
         for (int i = 0; i<=100; i+=5) {
-            String n = String.format("%.2f", Math.log(alg4(i)));
-            double s = Math.log(alg4(i)) / i*b;
+            double s = Math.log(alg5(i)) / i*b;
             String y = String.format("%.2f", r*i+s);
-            System.out.println(n+" ; "+y);
+            System.out.println(i+" ; "+y);
         }
-        System.out.println(b);
+
+        
 
         // POLINOMIAL
         /*
@@ -26,6 +24,14 @@ public class App {
         // System.out.println("log(f(e^n)) = log(n^b)");
         
         // System.out.println("b = "+b);
+
+
+        // executar algoritmo
+        for (int i=0; i<=150; i+=5) {
+            System.out.println(i+" ; "+alg5(i));
+        }
+        
+        
     }
 
     public static int alg1(int n){
@@ -92,9 +98,9 @@ public class App {
         return cont_ops;
     }
 
-    public static int alg5(int n) {
-        int cont_ops = 0;
-        int res = 0;
+    public static long alg5(int n) {
+        long cont_ops = 0;
+        long res = 0;
 
         for (int i = n/2; i <= n+1; i+=2) {
             for (int j = i; j <= n*i; j+=i/2+1) {
